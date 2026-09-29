@@ -64,10 +64,15 @@ export default function HeroBanner() {
         </ul>
 
         <div className="mt-6 flex flex-col gap-2.5">
-          <button className="h-[50px] w-full rounded-2xl border-2 border-black bg-[#00524a] text-[15px] font-medium text-white">
+          <button
+            className="h-[50px] w-full cursor-pointer rounded-2xl border-2 border-black bg-[#00524a] text-[15px] font-medium text-white"
+          >
             List your room
           </button>
-          <button className="h-[50px] w-full rounded-2xl border-2 border-black bg-[#fffff0] text-[15px] font-medium">
+
+          <button
+            className="h-[50px] w-full cursor-pointer rounded-2xl border-2 border-black bg-[#fffff0] text-[15px] font-medium"
+          >
             Sell an item
           </button>
         </div>
@@ -121,11 +126,15 @@ export default function HeroBanner() {
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <button className="rounded-xl bg-[#f0d7ff] px-5 py-4 text-[17px] font-medium">
+              <button
+                className="cursor-pointer rounded-xl bg-[#f0d7ff] px-5 py-4 text-[17px] font-medium"
+              >
                 List your room
               </button>
 
-              <button className="rounded-xl bg-white px-5 py-4 text-[17px] font-medium">
+              <button
+                className="cursor-pointer rounded-xl bg-white px-5 py-4 text-[17px] font-medium"
+              >
                 Sell an item
               </button>
             </div>

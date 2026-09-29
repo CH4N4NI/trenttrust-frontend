@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+import Navbar from "../components/navbar";
+import Hero from "../components/hero";
 import Steps from "../components/Steps";
 import SecuritySection from "../components/SecuritySection";
 import RoomFinderSection from "../components/RoomFinderSection";

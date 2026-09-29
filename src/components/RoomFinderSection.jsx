@@ -88,7 +88,7 @@ function RoomFinderSection() {
 
             <div className="mt-5 flex items-center justify-between border-t border-black/10 pt-4 text-[13px]">
               <span className="text-gray-600">Available for Winter Term</span>
-              <a href="#" className="flex items-center gap-1 font-medium">
+              <a href="#" className="flex cursor-pointer items-center gap-1 font-medium">
                 Request live tour
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
@@ -162,7 +162,7 @@ function RoomFinderSection() {
                 </div>
               )}
 
-              <button className="mt-4 flex h-11 w-full items-center justify-center gap-1.5 rounded-2xl border-2 border-black text-[15px]">
+              <button className="mt-4 flex h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-2xl border-2 border-black text-[15px]">
                 {item.cta}
                 {item.arrow && <ArrowRight className="h-4 w-4" />}
               </button>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Hero() {
   return (
     <section className="mx-auto max-w-6xl bg-[#ffffeb] px-5 pt-8 pb-10 text-center lg:px-6 lg:pt-20 lg:pb-20">
@@ -23,9 +25,12 @@ function Hero() {
       </p>
 
       {/* CTA */}
-      <button className="mt-7 w-full rounded-xl border-2 border-black bg-[#e8d5ff] px-8 py-4 text-base font-medium lg:mt-6 lg:w-76 lg:py-3 lg:text-[15px]">
+      <Link
+        to="/welcome"
+        className="mt-7 inline-block w-full cursor-pointer rounded-xl border-2 border-black bg-[#e8d5ff] px-8 py-4 text-base font-medium lg:mt-6 lg:w-76 lg:py-3 lg:text-[15px]"
+      >
         Get started
-      </button>
+      </Link>
 
       {/* feature strip: mobile pills */}
       <div className="mx-5 mt-6 flex flex-col gap-2 text-[13px] lg:hidden">

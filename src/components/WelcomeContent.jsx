@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const features = [
   {
     icon: "/img/Find Housing.png",
@@ -86,7 +88,7 @@ export default function WelcomeContent() {
                   </div>
                 </div>
 
-                {/* DESKTOP card (unchanged) */}
+                {/* DESKTOP card*/}
                 <div className="hidden h-24 w-172 rounded-[12px] bg-[#E4E4D0] p-4 shadow-sm md:block">
                   <div className="flex items-start gap-3">
                     <div className="flex h-10 w-10 items-center justify-center">
@@ -106,12 +108,18 @@ export default function WelcomeContent() {
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <button className="flex flex-1 items-center justify-center gap-2 rounded-[10px] bg-[#E4D3F5] px-4 py-2.5 text-sm font-medium text-neutral-900 transition-opacity hover:opacity-80 md:rounded-[12px] md:border-2 md:text-lg md:shadow-sm">
+            <Link
+              to="/signup"
+              className="flex flex-1 items-center justify-center gap-2 rounded-[10px] bg-[#E4D3F5] px-4 py-2.5 text-sm font-medium text-neutral-900 transition-opacity hover:opacity-80 md:rounded-[12px] md:border-2 md:text-lg md:shadow-sm"
+            >
               Create Account <img src="/img/Rightarrow.png" alt="" />
-            </button>
-            <button className="flex-1 bg-transparent px-4 py-2.5 text-sm font-medium text-neutral-900 transition-opacity hover:opacity-70 md:rounded-[12px] md:border-2 md:bg-[#FFFFF8] md:text-lg md:shadow-sm">
+            </Link>
+            <Link
+              to="/signin"
+              className="flex-1 bg-transparent px-4 py-2.5 text-center text-sm font-medium text-neutral-900 transition-opacity hover:opacity-70 md:rounded-[12px] md:border-2 md:bg-[#FFFFF8] md:text-lg md:shadow-sm"
+            >
               I already have an account
-            </button>
+            </Link>
           </div>
 
           <div className="mt-6 rounded-[12px] bg-[#F5F5E8] p-4 md:mt-0 md:border md:border-dashed md:border-[#8A8A80] md:bg-[#FFFFF8]">

@@ -1,6 +1,6 @@
 export default function WelcomeNavbar() {
   return (
-    <nav className="flex items-center justify-between bg-[#FFFFEB] px-4 py-3 md:mx-8 md:mt-8 md:rounded-[12px] md:border-2 md:bg-[#FFFFF8] md:px-8 md:py-4">
+    <nav className="flex items-center justify-between px-4 py-3 md:mx-8 md:mt-8 md:rounded-[12px] md:border-2 md:px-8 md:py-4">
       {/* Logo group: desktop only */}
       <div className="hidden items-center gap-4 md:flex">
         <img src="/img/Logo.png" alt="" />
