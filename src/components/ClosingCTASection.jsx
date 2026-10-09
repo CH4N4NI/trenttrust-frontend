@@ -13,7 +13,7 @@ function ClosingCTASection() {
           housing and trusted campus marketplace deals.
         </p>
 
-        <button className="mt-6 w-full rounded-xl border border-black bg-[#F0D7FF] px-8 py-3 text-base font-semibold text-black lg:mt-8 lg:w-auto lg:text-lg">
+        <button className="mt-6 w-full cursor-pointer rounded-xl border border-black bg-[#F0D7FF] px-8 py-3 text-base font-semibold text-black transition duration-200 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_0_#000] active:translate-y-0 active:shadow-none lg:mt-8 lg:w-auto lg:text-lg">
           Get verified — it's free
         </button>
 

@@ -4,6 +4,8 @@ import Welcome from "./pages/Welcome";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import StudentVerification from "./pages/StudentVerification";
+import VerificationProgress from "./pages/VerificationProgress";
+import BrowseHousing from "./components/BrowseHousingContent";
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
         <Route path="/signup" element={<SignUp /> } />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/verification" element={<StudentVerification />} />
+        <Route path="/verification-progress" element={<VerificationProgress />} />
+        <Route path="/browse-housing" element={<BrowseHousing />} />
       </Routes>
     </BrowserRouter>
   );

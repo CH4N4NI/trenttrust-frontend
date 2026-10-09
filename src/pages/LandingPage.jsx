@@ -1,4 +1,4 @@
-import Navbar from "../components/navbar";
+import LandingNavbar from "../components/LandingNavbar";
 import Hero from "../components/hero";
 import Steps from "../components/Steps";
 import SecuritySection from "../components/SecuritySection";
@@ -13,7 +13,7 @@ import Footer from "../components/Footer";
 function LandingPage() {
   return (
     <div className="min-h-screen bg-[#ffffeb]">
-      <Navbar />
+      <LandingNavbar />
       <Hero />
       <Steps />
       <SecuritySection />

@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import WelcomeNavbar from "./WelcomeNavbar"; // fix path to match your folder
+import WelcomeNavbar from "./WelcomeNavbar"; 
 
-// true when the screen is narrower than 768px (Tailwind's md breakpoint)
+
 function useIsMobile() {
   const query = "(max-width: 767px)";
   const [isMobile, setIsMobile] = useState(

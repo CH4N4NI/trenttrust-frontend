@@ -227,7 +227,7 @@ export default function SignUpContent() {
             <button
               type="submit"
               disabled={!agreed}
-              className="mt-1 w-full rounded-xl border-0 bg-[#f0d7ff] py-3 text-[15px] font-medium text-[#161616] disabled:cursor-not-allowed disabled:opacity-50 md:border-2 md:border-black"
+              className="mt-1 w-full cursor-pointer rounded-xl border-0 bg-[#f0d7ff] py-3 text-[15px] font-medium text-[#161616] transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-50 md:border-2 md:border-black"
             >
               Continue →
             </button>
