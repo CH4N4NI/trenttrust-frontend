@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout"; // Layout renders the Navbar
 
 const serif = { fontFamily: "'EB Garamond', Georgia, serif" };
@@ -115,7 +116,7 @@ const MOBILE_LISTINGS = [
   },
   {
     id: 102,
-    image: "/img/Canada Goose Style Winter.jpg",
+    image: "/img/Canada Goose Style Winter Parka.jpg",
     photos: 5,
     price: 60,
     tag: "Winter Apparel",
@@ -127,7 +128,7 @@ const MOBILE_LISTINGS = [
   },
   {
     id: 103,
-    image: "/img/CE Graphing Calculator.jpg",
+    image: "/img/TI-84 Plus CE Graphing Calculator.jpg",
     photos: 2,
     price: 45,
     code: "MATH 1110",
@@ -139,7 +140,7 @@ const MOBILE_LISTINGS = [
   },
   {
     id: 104,
-    image: "/img/Danby Compact Dorm Mini Fridge.jpg",
+    image: "/img/Danby Compact Dorm Mini-Fridge.jpg",
     photos: 4,
     price: 50,
     tag: "Appliances",
@@ -255,11 +256,14 @@ const ArrowRight = () => (
 
 /* ---------- Desktop / tablet card ---------- */
 
-function ListingCard({ item, onMessage }) {
+function ListingCard({ item, onMessage, onOpen }) {
   const [saved, setSaved] = useState(false);
 
   return (
-    <article className="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-neutral-400/70 bg-[#fffff7]">
+    <article
+      onClick={() => onOpen(item)}
+      className="flex min-w-0 cursor-pointer flex-col overflow-hidden rounded-2xl border border-neutral-400/70 bg-[#fffff7]"
+    >
       <div className="relative aspect-[4/3] bg-neutral-200">
         <img
           src={item.image}
@@ -272,7 +276,10 @@ function ListingCard({ item, onMessage }) {
         </span>
         <button
           type="button"
-          onClick={() => setSaved((s) => !s)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setSaved((s) => !s);
+          }}
           aria-label={saved ? "Remove from saved" : "Save item"}
           aria-pressed={saved}
           className={`absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-neutral-300 ${
@@ -307,7 +314,10 @@ function ListingCard({ item, onMessage }) {
 
         <button
           type="button"
-          onClick={() => onMessage(item)}
+          onClick={(e) => {
+            e.stopPropagation();
+            onMessage(item);
+          }}
           className="mt-4 w-full rounded-lg border border-neutral-300 bg-white py-2.5 text-[13.5px] font-medium text-[#02503f] transition hover:bg-[#f4f4e2]"
         >
           Message seller
@@ -321,7 +331,10 @@ function ListingCard({ item, onMessage }) {
 
 function MobileListingCard({ item, onView }) {
   return (
-    <article className="rounded-[28px] border-[1.5px] border-neutral-900 bg-[#fffff7] p-5">
+    <article
+      onClick={() => onView(item)}
+      className="cursor-pointer rounded-[28px] border-[1.5px] border-neutral-900 bg-[#fffff7] p-5"
+    >
       <div className="relative overflow-hidden rounded-[22px] border-2 border-neutral-900 bg-neutral-200">
         <img
           src={item.image}
@@ -394,7 +407,6 @@ function MobileListingCard({ item, onView }) {
 
       <button
         type="button"
-        onClick={() => onView(item)}
         className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl border-2 border-neutral-900 bg-[#fffff0] py-3 text-[16px] transition active:brightness-95"
       >
         View item details
@@ -485,6 +497,12 @@ export default function MarketplaceContent({
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("recent");
   const [page, setPage] = useState(1);
+
+  const navigate = useNavigate();
+  const openItem = (item) => {
+    onViewItem(item);
+    navigate("/marketplace/item");
+  };
 
   const q = query.trim().toLowerCase();
   const prepare = (list) =>
@@ -616,7 +634,7 @@ export default function MarketplaceContent({
             {visibleMobile.length > 0 ? (
               <div className="flex flex-col gap-5">
                 {visibleMobile.map((l) => (
-                  <MobileListingCard key={l.id} item={l} onView={onViewItem} />
+                  <MobileListingCard key={l.id} item={l} onView={openItem} />
                 ))}
               </div>
             ) : (
@@ -628,7 +646,7 @@ export default function MarketplaceContent({
             {visible.length > 0 ? (
               <div className="grid grid-cols-2 gap-5 lg:grid-cols-3 xl:grid-cols-4">
                 {visible.map((l) => (
-                  <ListingCard key={l.id} item={l} onMessage={onMessageSeller} />
+                  <ListingCard key={l.id} item={l} onMessage={onMessageSeller} onOpen={openItem} />
                 ))}
               </div>
             ) : (

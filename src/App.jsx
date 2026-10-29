@@ -8,6 +8,7 @@ import VerificationProgress from "./pages/VerificationProgress";
 import BrowseHousing from "./pages/BrowseHousing";
 import Marketplace from "./pages/Marketplace";
 import CreateProfile from "./pages/CreateProfile";
+import ItemDetail from "./pages/ItemDetail";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/browse-housing" element={<BrowseHousing />} />
         <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/create-profile" element={<CreateProfile />} />
+        <Route path="/marketplace/item" element={<ItemDetail />} />
       </Routes>
     </BrowserRouter>
   );
