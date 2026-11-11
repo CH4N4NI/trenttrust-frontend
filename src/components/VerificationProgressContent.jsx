@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const serif = { fontFamily: "'EB Garamond', Georgia, serif" };
 const sans = { fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" };
 
@@ -66,6 +68,18 @@ export default function VerificationProgressContent({
   onBack = () => {},
   onContactDesk = () => {},
 }) {
+  const navigate = useNavigate();
+
+  // Continue goes to the guest-locked Browse Housing page, Back goes to the landing page
+  const handleContinue = () => {
+    onContinue();
+    navigate("/browse-housing-guest");
+  };
+  const handleBack = () => {
+    onBack();
+    navigate("/");
+  };
+
   return (
     <div
       className="min-h-screen overflow-x-hidden bg-[#fffff7] px-6 py-6 text-neutral-900 sm:px-8 sm:py-6 lg:px-12 lg:py-8"
@@ -74,7 +88,7 @@ export default function VerificationProgressContent({
       {/* Mobile top bar: round back button + step pill */}
       <div className="sm:hidden">
         <button
-          onClick={onBack}
+          onClick={handleBack}
           aria-label="Back"
           className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ececE4]"
         >
@@ -96,7 +110,7 @@ export default function VerificationProgressContent({
           </span>
         </div>
         <button
-          onClick={onBack}
+          onClick={handleBack}
           className="flex shrink-0 items-center gap-2 text-[15px] font-medium"
         >
           <Arrow dir="left" />
@@ -137,7 +151,7 @@ export default function VerificationProgressContent({
 
           {/* Primary button */}
           <button
-            onClick={onContinue}
+            onClick={handleContinue}
             className="mx-auto mt-9 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#F0D7FF] px-4 py-4 text-[16px] font-medium transition hover:brightness-95 sm:mt-8 sm:max-w-[325px] sm:rounded-xl sm:border-2 sm:border-neutral-900"
           >
             <span className="sm:hidden">Browse housing while you wait</span>

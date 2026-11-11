@@ -9,6 +9,8 @@ import BrowseHousing from "./pages/BrowseHousing";
 import Marketplace from "./pages/Marketplace";
 import CreateProfile from "./pages/CreateProfile";
 import ItemDetail from "./pages/ItemDetail";
+import BrowseHousingLocked from "./pages/BrowseHousingLocked";
+import HousingDetail from "./pages/HousingDetail";
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/create-profile" element={<CreateProfile />} />
         <Route path="/marketplace/item" element={<ItemDetail />} />
+        <Route path="/browse-housing-guest" element={<BrowseHousingLocked />} />
+        <Route path="/Housing-Detail" element={<HousingDetail />} />
       </Routes>
     </BrowserRouter>
   );
