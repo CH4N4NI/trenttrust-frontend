@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const sans = { fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" };
 
@@ -168,8 +169,16 @@ export default function MessagesContent() {
     setDraft("");
   };
 
+  const TABS = [
+  { label: "Home", icon: "/img/Home.png", to: "/" },
+  { label: "Housing", icon: "/img/Housing.png", to: "/browse-housing" },
+  { label: "Market", icon: "/img/Market.png", to: "/marketplace" },
+  { label: "Messages", icon: "/img/Messages.png", to: "/messages" },
+  { label: "Post/Sell", icon: "/img/Post,Sell.png", to: "#" },
+  ];
+
   return (
-    <div className="bg-[#fdf9f6] px-4 pb-10 pt-6 text-neutral-900 lg:pt-14" style={sans}>
+    <div className="bg-[#fdf9f6] px-4 pb-24 pt-6 text-neutral-900 lg:pt-14" style={sans}>
       <div className="mx-auto flex h-[calc(100vh-170px)] min-h-[560px] max-h-[780px] max-w-[1168px] overflow-hidden rounded-2xl border border-[#e6e0dc] bg-white">
         {/* ---------- LEFT: conversation list ---------- */}
         <aside
@@ -432,7 +441,28 @@ export default function MessagesContent() {
             </button>
           </form>
         </section>
-      </div>
+        
+        {/* Bottom tab bar (mobile only) */}
+        <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-neutral-200 bg-white px-2 pb-[env(safe-area-inset-bottom)] pt-2 sm:hidden">
+          <ul className="grid grid-cols-5">
+            {TABS.map((tab) => (
+              <li key={tab.label}>
+                <Link
+                  to={tab.to}
+                  className={`flex flex-col items-center gap-1 py-1.5 text-[13px] ${
+                    tab.label === "Messages"
+                      ? "font-medium text-[#02503f]"
+                      : "text-neutral-800"
+                  }`}
+                >
+                  <img src={tab.icon} alt="" className="h-6 w-6 object-contain" />
+                  {tab.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        </div>
     </div>
   );
 }

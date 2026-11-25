@@ -114,7 +114,7 @@ const TABS = [
   { label: "Home", icon: "/img/Home.png", to: "/" },
   { label: "Housing", icon: "/img/Housing.png", to: "/browse-housing" },
   { label: "Market", icon: "/img/Market.png", to: "/marketplace" },
-  { label: "Messages", icon: "/img/Messages.png", to: "#" },
+  { label: "Messages", icon: "/img/Messages.png", to: "/" },
   { label: "Post/Sell", icon: "/img/Post,Sell.png", to: "#" },
 ];
 
