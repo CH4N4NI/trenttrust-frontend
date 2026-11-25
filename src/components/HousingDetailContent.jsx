@@ -56,7 +56,6 @@ const ArrowLeft = (p) => <Icon {...p}><path d="M19 12H5M11 6l-6 6 6 6" /></Icon>
 const ArrowRight = (p) => <Icon {...p}><path d="M5 12h14M13 6l6 6-6 6" /></Icon>;
 const Info = (p) => <Icon {...p}><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h.01" /></Icon>;
 const Clock = (p) => <Icon {...p}><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></Icon>;
-const Flag = (p) => <Icon {...p}><path d="M5 21V4M5 4h12l-2 4 2 4H5" /></Icon>;
 const CheckCircle = (p) => <Icon {...p}><circle cx="12" cy="12" r="9" /><path d="M8 12.5l3 3 5-6" /></Icon>;
 const EmptyCircle = (p) => <Icon {...p}><circle cx="12" cy="12" r="9" /></Icon>;
 const Shield = (p) => <Icon {...p}><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z" /></Icon>;
@@ -528,7 +527,7 @@ export default function HousingDetailContent({ onMessage = () => {}, onReport = 
                   onClick={onReport}
                   className="flex h-10 items-center justify-center gap-2 rounded-lg bg-[#f1eeec] text-[14px]"
                 >
-                  <Flag className="h-4 w-4" /> Report listing
+                  <Pic name="Grey Flag" /> Report listing
                 </button>
               </div>
               <p className="mt-5 hidden items-center gap-2 border-t border-neutral-200 pt-4 text-[13px] text-neutral-500 sm:flex">
@@ -545,9 +544,9 @@ export default function HousingDetailContent({ onMessage = () => {}, onReport = 
                   <h3 className="text-[26px] font-bold leading-tight">Alex M.</h3>
                   <p className="text-[17px] text-neutral-600">3rd Year Environmental Science</p>
                   <span className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-[#e3efe9] px-3 py-1.5 text-[14px] font-bold text-[#02503f]">
-                    <img src="/img/Double Check.png" alt="" /> 
+                    <img src="/img/Single Check.png" alt="" /> 
                       <span>
-                      <img src="/img/Double Check.png" alt="" />
+                      <img src="/img/Single Check.png" alt="" />
                       </span> Verified Trent member
                   </span>
                 </div>

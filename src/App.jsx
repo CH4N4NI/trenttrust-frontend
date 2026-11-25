@@ -11,6 +11,7 @@ import CreateProfile from "./pages/CreateProfile";
 import ItemDetail from "./pages/ItemDetail";
 import BrowseHousingLocked from "./pages/BrowseHousingLocked";
 import HousingDetail from "./pages/HousingDetail";
+import Messages from "./pages/Messages";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/marketplace/item" element={<ItemDetail />} />
         <Route path="/browse-housing-guest" element={<BrowseHousingLocked />} />
         <Route path="/Housing-Detail" element={<HousingDetail />} />
+        <Route path="/messages" element={<Messages />} />
       </Routes>
     </BrowserRouter>
   );
