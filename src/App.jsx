@@ -12,6 +12,9 @@ import ItemDetail from "./pages/ItemDetail";
 import BrowseHousingLocked from "./pages/BrowseHousingLocked";
 import HousingDetail from "./pages/HousingDetail";
 import Messages from "./pages/Messages";
+import ListingType from "./pages/ListingType";
+import ListingHousing from "./pages/ListingHousing";
+import ListingMarketplace from "./pages/ListingMarketplace";
 
 
 function App() {
@@ -31,6 +34,9 @@ function App() {
         <Route path="/browse-housing-guest" element={<BrowseHousingLocked />} />
         <Route path="/Housing-Detail" element={<HousingDetail />} />
         <Route path="/messages" element={<Messages />} />
+        <Route path="/listings" element={<ListingType />} />
+        <Route path="/post/housing" element={<ListingHousing />} />
+        <Route path="/post/marketplace" element={<ListingMarketplace />} />
       </Routes>
     </BrowserRouter>
   );

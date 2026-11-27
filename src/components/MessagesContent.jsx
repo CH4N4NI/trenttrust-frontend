@@ -9,7 +9,7 @@ const TABS = [
   { label: "Housing", icon: "/img/Housing.png", to: "/browse-housing" },
   { label: "Market", icon: "/img/Market.png", to: "/marketplace" },
   { label: "Messages", icon: "/img/Messages.png", to: "/messages" },
-  { label: "Post/Sell", icon: "/img/Post,Sell.png", to: "#" },
+  { label: "Post/Sell", icon: "/img/Post,Sell.png", to: "/listings" },
 ];
 
 // ---- Mock data (replace with your API later) ----
